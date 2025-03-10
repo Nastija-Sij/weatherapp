@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
     <title>Weather</title>
   </head>
   <body>
@@ -42,17 +50,50 @@
               <li>20 °C</li>
             </ul>
           </div>
+          <div class="forecast-icons">
+            <ul>
+              <li>
+                <span class="material-symbols-outlined"> light_mode </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined">
+                  partly_cloudy_day
+                </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> light_mode </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> light_mode </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> light_mode </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> rainy </span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> light_mode </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="right-bar">
-        <p>Today it's</p>
-        <h2>20 <span class="current-units"> °C</span></h2>
-
-        <h3 id="current-city">Vienna</h3>
+        <div class="right-bar-content">
+          <p>Today it's Saturday and it's</p>
+          <div class="temperature-container">
+            <h2 id="current-temperature">20</h2>
+            <span class="current-units"> °C | °F</span>
+          </div>
+          <p>in <span id="current-city">Vienna</span></p>
+        </div>
       </div>
     </div>
     <footer>
-      Created my Nastija Sij in
+      Created by
+      <a href="https://github.com/Nastija-Sij" target="_blank">Nastija Sij</a>
+      in
       <a href="https://github.com/Nastija-Sij/weatherapp" target="_blank"
         >GitHub</a
       >, and hosted on Netlify

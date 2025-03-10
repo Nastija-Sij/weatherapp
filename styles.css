@@ -23,18 +23,53 @@ hr {
 }
 .forecast-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 15px;
 }
 ul {
   list-style-type: none;
   margin-left: -40px;
-  line-height: 30px;
+  line-height: 36px;
 }
+.material-symbols-outlined {
+  font-size: 48px;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 .right-bar {
-  background-color: rgba(179, 127, 127, 0.384);
+  background-color: rgba(252, 252, 252, 0.384);
   border-radius: 6px;
   padding-left: 30px;
+
+  /*center content vertically*/
+  display: flex;
+  align-items: center; /*centers contect vertically*/
+  justify-content: flex-start; /*aligns the content to the left*/
+}
+p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.temperature-container {
+  display: flex;
+  align-items: flex-start; /*aligns the number and the degree symbol*/
+  gap: 5px; /*space between the number and the degree symbol*/
+  margin-bottom: 0;
+  max-height: 120px;
+}
+#current-temperature {
+  font-size: 120px;
+  margin-top: 0;
+  line-height: 1; /*prevents unnecessary space between the number and the degree symbol*/
+  font-weight: 300;
+}
+.current-units {
+  font-size: 20px;
+  margin-top: 20px; /*slightly moves the units down*/
+}
+#current-city {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 footer {
