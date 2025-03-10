@@ -21,8 +21,8 @@
     <div class="container" id="container">
       <div class="left-bar" id="left-bar">
         <div class="searching-tool" id="searching-tool">
-          <form id="seach-form" id="seach-form">
-            <input type="text" value="Enter a city" id="search-bar"/>
+          <form id="search-form">
+            <input type="text" value="Enter a city" id="search-input" />
             <input type="submit" value="Search" name="" id="button" />
           </form>
         </div>
@@ -81,7 +81,11 @@
       </div>
       <div class="right-bar">
         <div class="right-bar-content">
-          <p>Today it's Saturday and it's</p>
+          <p>
+            Today is <span id="current-day">Saturday</span>,
+            <span id="date"></span> <br />
+            The temperature is
+          </p>
           <div class="temperature-container">
             <h2 id="current-temperature">20</h2>
             <span class="current-units"> °C | °F</span>
@@ -107,5 +111,6 @@
         >GitHub</a
       >, and hosted on Netlify
     </footer>
+    <script src="src/script.js"></script>
   </body>
 </html>

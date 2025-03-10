@@ -18,7 +18,7 @@ body {
   padding: 20px 30px;
   min-width: 200px;
 }
-#search-bar {
+#search-input {
   border-radius: 5px;
   border: none;
   background-color: rgba(252, 252, 252, 0.651);
