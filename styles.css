@@ -9,6 +9,8 @@ body {
   max-width: 1200px;
   margin: 40px auto;
   min-height: 300px;
+
+  font-family: "Raleway", sans-serif;
 }
 .left-bar {
   background-color: rgba(252, 252, 252, 0.384);
@@ -21,7 +23,7 @@ hr {
 }
 .forecast-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
 ul {
@@ -33,7 +35,6 @@ ul {
   background-color: rgba(179, 127, 127, 0.384);
   border-radius: 6px;
   padding-left: 30px;
- 
 }
 
 footer {
