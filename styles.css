@@ -1,3 +1,42 @@
-h1 {
-  color: red;
+body {
+  background-color: rgb(135, 175, 162);
+}
+.container {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  min-height: 300px;
+}
+.left-bar {
+  background-color: rgba(252, 252, 252, 0.384);
+  border-radius: 6px;
+  padding: 20px 30px;
+  min-width: 200px;
+}
+hr {
+  margin-top: 20px;
+}
+.forecast-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+ul {
+  list-style-type: none;
+  margin-left: -40px;
+  line-height: 30px;
+}
+.right-bar {
+  background-color: rgba(179, 127, 127, 0.384);
+  border-radius: 6px;
+  padding-left: 30px;
+ 
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
 }

@@ -3,33 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Weather</title>
   </head>
   <body>
-    
-    <div class="left-bar">
-      <h1>My weather App</h1>
-      <div class="searching-tool">
-        <form id="seach-form">
-          <input type="text" value="Enter a city" />
-          <input type="submit" value="Search" name="" id="" />
-        </form>
+    <div class="container" id="container">
+      <div class="left-bar" id="left-bar">
+        <div class="searching-tool" id="searching-tool">
+          <form id="seach-form" id="seach-form">
+            <input type="text" value="Enter a city" />
+            <input type="submit" value="Search" name="" id="" />
+          </form>
+        </div>
+        <hr />
+        <div class="forecast-columns">
+          <div class="forecast-days">
+            <ul>
+              <li>Moday</li>
+              <li>Tuesday</li>
+              <li>wednesday</li>
+              <li>Thursday</li>
+              <li>Friday</li>
+              <li>Saturday</li>
+              <li>Sunday</li>
+            </ul>
+          </div>
+          <div class="forecast-temperature">
+            <ul>
+              <li>20 °C</li>
+              <li>20 °C</li>
+              <li>20 °C</li>
+              <li>20 °C</li>
+              <li>20 °C</li>
+              <li>20 °C</li>
+              <li>20 °C</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="forecast">
-        <ul>
-          <li>Tomorrow</li>
-          <li>next</li>
-        </ul>
-      </div>
-    </div>
-    <div class="right-bar">
-      <p>Today it's</p>
-      <h2>20</h2>
-      <p>°C</p>
-      <h3 id="current-city">Vienna</h3>
-    </div>
+      <div class="right-bar">
+        <p>Today it's</p>
+        <h2>20 <span class="current-units"> °C</span></h2>
 
+        <h3 id="current-city">Vienna</h3>
+      </div>
+    </div>
     <footer>
       Created my Nastija Sij in
       <a href="https://github.com/Nastija-Sij/weatherapp" target="_blank"
