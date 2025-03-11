@@ -21,7 +21,7 @@ body {
 .search-form {
   display: flex;
   flex-wrap: nowrap; /*keeps input and button on the same line*/
-
+  margin-top: 20px;
   align-items: center; /*centers the input and button vertically*/
   justify-content: center; /*centers the input and button horizontally*/
   width: 100%;
@@ -73,14 +73,18 @@ ul {
 
 .right-bar {
   background-color: rgba(252, 252, 252, 0.384);
+  position: relative;
   border-radius: 6px;
   padding-left: 30px;
-
   /*center content vertically*/
   display: flex;
   align-items: center; /*centers contect vertically*/
   justify-content: flex-start; /*aligns the content to the left*/
+  min-height: 150px;
+
+  overflow: hidden; /*prevents the background image from overflowing the container*/
 }
+
 p {
   margin-bottom: 0px;
   margin-top: 0px;
