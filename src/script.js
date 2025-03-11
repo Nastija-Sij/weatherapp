@@ -2,13 +2,25 @@ function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = searchInputElement.value;
+
+  // Capitalize first letter, make the rest lowercase:
+  let formattedCity = searchInputElement.value
+    .trim()
+    .toLowerCase()
+    .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalizes first letter of each word
+
+  cityElement.innerHTML = formattedCity;
 
   let apiKey = "o1cfacc0a9aa5038bce80c403dc4abt1";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayTemperature);
-} //* This way, when you search for a city, the API will actually be called.
+  axios
+    .get(apiUrl)
+    .then(displayTemperature)
+    .catch(() => {
+      alert("City not found. Please check the spelling!");
+    });
+}
 
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -54,7 +66,7 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = `${temperature}`;
   headingElement.innerHTML = `${city}`;
   descriptionElement.innerHTML = `${description} with a temperature of`;
-  physicsElement.innerHTML = `Humidity: ${humidity}% <br /> Wind: ${wind} km/h`;
+  physicsElement.innerHTML = `Humidity: <strong>${humidity}%</strong> <br /> Wind: <strong>${wind} km/h </strong>`;
   iconElement.innerHTML = `<img src="${iconUrl}" alt="${description}" width="90px"/>`;
   dateElement.innerHTML = formatDate(new Date());
 }
