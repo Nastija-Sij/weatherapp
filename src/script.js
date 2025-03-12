@@ -21,6 +21,13 @@ function search(event) {
       alert("City not found. Please check the spelling!");
     });
 }
+function getForecast(city) {
+  let apiKey = "o1cfacc0a9aa5038bce80c403dc4abt1";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=4{apiKey}6units=metric`;
+  axios.get(apiUrl).then(displayforecast);
+
+  console.log(getForecast);
+}
 
 function displayforecast() {
   let days = [
