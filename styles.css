@@ -130,12 +130,16 @@ p {
   font-size: 20px;
   margin-top: 20px; /*slightly moves the units down*/
 }
+#in-city {
+  margin-top: 20px;
+}
 #current-city {
   font-weight: bold;
   font-size: 30px;
 }
+
 .physics {
-  margin-top: 10px;
+  margin-top: 30px;
   font-size: 15px;
   color: rgb(91, 90, 90);
 }
