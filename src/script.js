@@ -22,6 +22,37 @@ function search(event) {
     });
 }
 
+function displayforecast() {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tueday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Satday",
+  ];
+  let forecastDays = "";
+  let forecastTemperature = "";
+  let forecastIcons = "";
+
+  days.forEach(function (day) {
+    forecastDays += `<div class="weather-forecast-date">${day}</div>`;
+    forecastTemperature += `<div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">18°</span>
+              <span class="weather-forecast-temperature-min">12°</span>
+              </div>`;
+    forecastIcons += `<div class="weather-forecast-icon">🌤</div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+  <div class="forecast-column">${forecastDays}</div>
+  <div class="forecast-column">${forecastTemperature}</div>
+  <div class="forecast-column">${forecastIcons}</div>`;
+}
+displayforecast();
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
