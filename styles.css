@@ -68,9 +68,9 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  line-height: 32px;
 }
-.weather-forecast-date {
-}
+
 .weather-forecast-temperature {
   font-weight: 500;
 }
@@ -81,8 +81,18 @@ hr {
   color: rgba(255, 255, 255, 0.714);
 }
 
-.weather-forecast-icon {
-  font-size: 15px;
+#current-icon img {
+  display: block; /* Removes extra spacing from inline images */
+  width: 120px; /* Ensures it scales properly */
+  height: auto; /* Keeps aspect ratio */
+  margin: 0 auto; /* Centers the icon */
+}
+.weather-forecast-icon img {
+  display: block; /* Removes extra spacing from inline images */
+  max-height: 32px; /* Ensures it scales properly */
+  width: auto;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .right-bar {

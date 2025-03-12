@@ -16,20 +16,25 @@ function search(event) {
 
   axios
     .get(apiUrl)
-    .then(displayTemperature)
+    .then((response) => {
+      displayTemperature(response);
+      getForecast(response.data.city);
+    }) //This ensures we use the correct city name from the API response.
     .catch(() => {
       alert("City not found. Please check the spelling!");
     });
 }
 function getForecast(city) {
   let apiKey = "o1cfacc0a9aa5038bce80c403dc4abt1";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=4{apiKey}6units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayforecast);
 
-  console.log(getForecast);
+  console.log(city);
 }
+function displayforecast(response) {
+  console.log(response.data);
 
-function displayforecast() {
   let days = [
     "Sunday",
     "Monday",
@@ -43,13 +48,20 @@ function displayforecast() {
   let forecastTemperature = "";
   let forecastIcons = "";
 
-  days.forEach(function (day) {
-    forecastDays += `<div class="weather-forecast-date">${day}</div>`;
+  response.data.daily.forEach(function (day) {
+    let maxTemp = Math.round(day.temperature.maximum);
+    let minTemp = Math.round(day.temperature.minimum);
+    let iconUrl = day.condition.icon_url;
+
+    forecastDays += `<div class="weather-forecast-date">${new Date(
+      day.time * 1000
+    ).toLocaleDateString("en-US", { weekday: "long" })}</div>`; //This converts UNIX timestamp (day.time) into a proper day name.
+
     forecastTemperature += `<div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">12°</span>
+              <span class="weather-forecast-temperature-max">${maxTemp}°</span>
+              <span class="weather-forecast-temperature-min">${minTemp}°</span>
               </div>`;
-    forecastIcons += `<div class="weather-forecast-icon">🌤</div>`;
+    forecastIcons += `<div class="weather-forecast-icon"><img src="${iconUrl}" class="forecast-icon" width="50"></div>`;
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -58,7 +70,6 @@ function displayforecast() {
   <div class="forecast-column">${forecastTemperature}</div>
   <div class="forecast-column">${forecastIcons}</div>`;
 }
-displayforecast();
 
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -107,6 +118,8 @@ function displayTemperature(response) {
   physicsElement.innerHTML = `Humidity: <strong>${humidity}%</strong> <br /> Wind: <strong>${wind} km/h </strong>`;
   iconElement.innerHTML = `<img src="${iconUrl}" alt="${description}" width="90px"/>`;
   dateElement.innerHTML = formatDate(new Date());
+
+  getForecast(response.data.city);
 }
 
 let searchForm = document.querySelector("#search-form");
